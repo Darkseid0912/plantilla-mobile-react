@@ -1,0 +1,131 @@
+import { Dimensions, StyleSheet } from 'react-native';
+import { WELCOME_COLORS, WELCOME_CONFIG } from '../constants/welcome.constants';
+
+const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
+
+export const welcomeStyles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: WELCOME_COLORS.background,
+  },
+  screenContainer: {
+    flex: 1,
+    backgroundColor: WELCOME_COLORS.background,
+    paddingHorizontal: WELCOME_CONFIG.spacing.lg,
+    paddingTop: WELCOME_CONFIG.spacing.xl,
+  },
+  decorTop: {
+    position: 'absolute',
+    top: -140,
+    left: -120,
+    width: 280,
+    height: 280,
+    borderRadius: 140,
+    backgroundColor: WELCOME_COLORS.accent,
+    opacity: 0.25,
+  },
+  decorBottom: {
+    position: 'absolute',
+    bottom: -180,
+    right: -120,
+    width: 320,
+    height: 320,
+    borderRadius: 160,
+    backgroundColor: WELCOME_COLORS.accent,
+    opacity: 0.2,
+  },
+  heroCircle: {
+    position: 'absolute',
+    top: -60,
+    right: -40,
+    width: WELCOME_CONFIG.circleSize,
+    height: WELCOME_CONFIG.circleSize,
+    borderRadius: WELCOME_CONFIG.circleSize / 2,
+    backgroundColor: WELCOME_COLORS.surface,
+  },
+  badgeWrap: {
+    width: 64,
+    height: 64,
+    borderRadius: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.35)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: WELCOME_CONFIG.spacing.md,
+  },
+  badgeIcon: {
+    color: WELCOME_COLORS.surface,
+  },
+  badgePill: {
+    alignSelf: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: WELCOME_CONFIG.spacing.xs,
+    backgroundColor: 'rgba(255, 255, 255, 0.22)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 14,
+    marginBottom: WELCOME_CONFIG.spacing.md,
+  },
+  badgePillText: {
+    color: WELCOME_COLORS.surface,
+    fontSize: 12,
+    fontWeight: '700',
+    letterSpacing: 0.6,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    maxWidth: 420,
+  },
+  titleLead: {
+    color: WELCOME_COLORS.textLight,
+    fontSize: WINDOW_WIDTH < 360 ? 30 : 34,
+    fontWeight: '800',
+  },
+  titleMain: {
+    color: WELCOME_COLORS.textLight,
+    fontSize: WINDOW_WIDTH < 360 ? 34 : 38,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  subtitle: {
+    color: WELCOME_COLORS.textMuted,
+    fontSize: 15,
+    lineHeight: 22,
+    marginTop: WELCOME_CONFIG.spacing.sm,
+  },
+  ctaButton: {
+    marginTop: WELCOME_CONFIG.spacing.lg,
+    height: WELCOME_CONFIG.buttonHeight,
+    backgroundColor: WELCOME_COLORS.surface,
+    borderRadius: WELCOME_CONFIG.buttonRadius,
+    paddingHorizontal: WELCOME_CONFIG.spacing.md,
+    alignSelf: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: WELCOME_CONFIG.spacing.sm,
+  },
+  ctaText: {
+    color: WELCOME_COLORS.primaryDark,
+    fontWeight: '700',
+    fontSize: 14,
+  },
+  ctaIconWrap: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: WELCOME_COLORS.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  ctaIcon: {
+    color: WELCOME_COLORS.surface,
+  },
+  footerSpacer: {
+    height: WINDOW_HEIGHT * 0.1,
+  },
+});
