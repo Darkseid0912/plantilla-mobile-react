@@ -18,6 +18,7 @@ export const menuStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     zIndex: 0,
+    marginBottom: MENU_CONFIG.spacing.sm,
   },
   greeting: {
     marginTop: MENU_CONFIG.spacing.md,
@@ -83,11 +84,13 @@ export const menuStyles = StyleSheet.create({
     color: MENU_COLORS.primaryDark,
     fontSize: 15,
     fontWeight: '700',
+    lineHeight: 20,
   },
   primaryActionSubtitle: {
     color: MENU_COLORS.textMuted,
     fontSize: 12,
     marginTop: 4,
+    lineHeight: 16,
   },
   primaryActionArrow: {
     color: MENU_COLORS.textMuted,
@@ -96,11 +99,13 @@ export const menuStyles = StyleSheet.create({
     color: MENU_COLORS.primaryDark,
     fontSize: 20,
     fontWeight: '800',
+    lineHeight: 26,
   },
   greetingSubtitle: {
     color: MENU_COLORS.textMuted,
     fontSize: 13,
     marginTop: 4,
+    lineHeight: 18,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
