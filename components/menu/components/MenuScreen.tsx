@@ -7,11 +7,15 @@ import { MenuSidebar } from './MenuSidebar';
 import { useMenuUser } from '../hooks/useMenuUser';
 import { MenuBottomNav } from './MenuBottomNav';
 import { MenuActionCard } from './MenuActionCard';
+import { useMenuProfiles } from '../hooks/useMenuProfiles';
+import { useRouter } from 'expo-router';
 
 export const MenuScreen: React.FC = () => {
+  const router = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const sidebarTranslateX = useRef(new Animated.Value(-260)).current;
   const { name } = useMenuUser();
+  const { profiles } = useMenuProfiles();
 
   const openSidebar = () => {
     setIsSidebarOpen(true);
@@ -71,7 +75,21 @@ export const MenuScreen: React.FC = () => {
         <View style={styles.greetingDivider} />
 
         <View style={styles.actionArea}>
-          <MenuActionCard />
+          {profiles.length === 0 ? (
+            <View style={styles.emptyState}>
+              <Text style={styles.emptyStateText}>No hay perfiles creados.</Text>
+            </View>
+          ) : (
+            profiles.map((profile) => (
+              <View key={profile.id} style={styles.profileCardSpacer}>
+                <MenuActionCard
+                  title={profile.name}
+                  subtitle="Configurar proxima dosis"
+                  onPress={() => router.push('/reminders')}
+                />
+              </View>
+            ))
+          )}
         </View>
 
         <MenuBottomNav />

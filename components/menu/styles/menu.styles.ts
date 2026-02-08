@@ -32,6 +32,23 @@ export const menuStyles = StyleSheet.create({
   actionArea: {
     marginTop: MENU_CONFIG.spacing.lg,
   },
+  emptyState: {
+    paddingVertical: MENU_CONFIG.spacing.lg,
+    paddingHorizontal: MENU_CONFIG.spacing.md,
+    borderRadius: 14,
+    backgroundColor: 'rgba(14, 124, 134, 0.08)',
+    borderWidth: 1,
+    borderColor: MENU_COLORS.border,
+  },
+  emptyStateText: {
+    color: MENU_COLORS.primaryDark,
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  profileCardSpacer: {
+    marginBottom: MENU_CONFIG.spacing.md,
+  },
   primaryAction: {
     width: '100%',
     paddingVertical: MENU_CONFIG.spacing.md,
@@ -86,11 +103,19 @@ export const menuStyles = StyleSheet.create({
     fontWeight: '700',
     lineHeight: 20,
   },
+  primaryActionTitleEmphasis: {
+    fontSize: 16,
+    letterSpacing: 0.2,
+  },
   primaryActionSubtitle: {
     color: MENU_COLORS.textMuted,
     fontSize: 12,
     marginTop: 4,
     lineHeight: 16,
+  },
+  primaryActionSubtitleEmphasis: {
+    color: MENU_COLORS.primary,
+    fontWeight: '600',
   },
   primaryActionArrow: {
     color: MENU_COLORS.textMuted,
@@ -194,5 +219,26 @@ export const menuStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 12,
     elevation: 6,
+  },
+  bottomNavFab: {
+    position: 'absolute',
+    top: -12,
+    alignSelf: 'center',
+    width: 58,
+    height: 58,
+    borderRadius: 29,
+    backgroundColor: MENU_COLORS.surface,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: MENU_COLORS.primaryDark,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    elevation: 6,
+  },
+  bottomNavFabText: {
+    color: MENU_COLORS.primary,
+    fontSize: 24,
+    fontWeight: '700',
   },
 });
